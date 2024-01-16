@@ -17,7 +17,7 @@ function getRandomNumber(min, max) {
 }
 
 function getRandElement(elements) {
-	const index = getRandomNumber(0, elements.length);
+	const index = getRandomNumber(0, elements.length - 1);
 
 	return elements[index];
 }
@@ -78,11 +78,13 @@ function generateChanel() {
 	color_code_element.value = getRandomNumber(color_code_min, color_code_max);
 
 	const repeter_time_slot_element = document.getElementById('repeter_time_slot');
-	const repeter_time_slot_min = parseInt(repeter_time_slot_element.getAttribute('min'));
-	const repeter_time_slot_max = parseInt(repeter_time_slot_element.getAttribute('max'));
-	repeter_time_slot_element.value = getRandomNumber(repeter_time_slot_min, repeter_time_slot_max);
+	let repeter_time_slot_values = [];
+	for (const repeter_time_slot_option of repeter_time_slot_element.getElementsByTagName('option')) {
+		repeter_time_slot_values.push(repeter_time_slot_option.value)
+	}
+	repeter_time_slot_element.value = getRandElement(repeter_time_slot_values)
 
-	const random_number = getRandElement([9, 99, 99])
+	const random_number = getRandElement([9, 99, 999])
 
 	const tx_frequency_element = document.getElementById('tx_frequency');
 	const tx_frequency_element_min = parseInt(tx_frequency_element.getAttribute('data-min'));

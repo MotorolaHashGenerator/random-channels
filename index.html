@@ -13,128 +13,202 @@
 		<div class="mb-5 text-center">
 			<h1>Random Channels Generator</h1>
 		</div>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<div class="col-auto">
-					<label for="key_id" class="col-form-label">Key ID</label>
+		<div class="row">
+			<div class="col">
+				<div class="mb-3">
+					<h2>Simplex (direct) mode</h2>
 				</div>
-				<div class="col-auto">
-					<input class="form-control" id="key_id" type="number" min="1" max="255" step="1"  minlength="1" maxlength="3">
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="first_key_id" class="col-form-label">Key ID</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="first_key_id" type="number" min="1" max="255" step="1"  minlength="1" maxlength="3">
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<!--<div class="col-auto">-->
-				<!--	<label for="enhanzed_key_size" class="col-form-label">Number of characters for enhanced privacy key</label>-->
-				<!--</div>-->
-				<!--<div class="col-auto">-->
-				<!--	<input class="form-control" id="enhanzed_key_size" type="number" value="10" min="1" max="10" step="1" minlength="1" maxlength="2">-->
-				<!--</div>-->
-				<div class="col-auto">
-					<label for="enhanzed_key" class="col-form-label">Enhanced privacy key</label>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="first_enhanzed_key" class="col-form-label">Enhanced privacy key</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="first_enhanzed_key" type="text" minlength="1" maxlength="10">
+						</div>
+					</div>
 				</div>
-				<div class="col-auto">
-					<input class="form-control" id="enhanzed_key" type="text" minlength="1" maxlength="10">
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="first_symmetric_key" class="col-form-label">Symmetric key</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="first_symmetric_key" type="text" step="1" minlength="1" maxlength="64">
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<!--<div class="col-auto">-->
-				<!--	<label for="symmetric_key_size" class="col-form-label">Number of characters for symmetric key</label>-->
-				<!--</div>-->
-				<!--<div class="col-auto">-->
-				<!--	<input class="form-control" id="symmetric_key_size" type="number" value="64" min="1" max="64" step="1" minlength="1" maxlength="2">-->
-				<!--</div>-->
-				<div class="col-auto">
-					<label for="symmetric_key" class="col-form-label">Symmetric key</label>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="first_call_id" class="col-form-label">Call ID</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="first_call_id" type="number" min="1" max="16776415" step="1"  minlength="1" maxlength="8">
+						</div>
+					</div>
 				</div>
-				<div class="col-auto">
-					<input class="form-control" id="symmetric_key" type="text" step="1" minlength="1" maxlength="64">
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="first_color_code" class="col-form-label">Color Code</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="first_color_code" type="number" min="1" max="15" step="1"  minlength="1" maxlength="2">
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<!--<div class="col-auto">-->
-				<!--	<label for="ras_id_size" class="col-form-label">Number of characters for RAS</label>-->
-				<!--</div>-->
-				<!--<div class="col-auto">-->
-				<!--	<input class="form-control" id="ras_id_size" type="number" value="24" min="6" max="24" step="1" minlength="1" maxlength="2">-->
-				<!--</div>-->
-				<div class="col-auto">
-					<label for="ras_id" class="col-form-label">RAS</label>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="first_tx_frequency" class="col-form-label">TX Frequency (MHz)</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="first_tx_frequency" type="text" data-min="136" data-max="174">
+						</div>
+					</div>
 				</div>
-				<div class="col-auto">
-					<input class="form-control" id="ras_id" type="text" minlength="1" maxlength="24">
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="first_rx_frequency" class="col-form-label">RX Frequency (MHz)</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="first_rx_frequency" type="text" data-min="136" data-max="174">
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<div class="col-auto">
-					<label for="call_id" class="col-form-label">Call ID</label>
-				</div>
-				<div class="col-auto">
-					<input class="form-control" id="call_id" type="number" min="1" max="16776415" step="1"  minlength="1" maxlength="8">
-				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<div class="col-auto">
-					<label for="color_code" class="col-form-label">Color Code</label>
-				</div>
-				<div class="col-auto">
-					<input class="form-control" id="color_code" type="number" min="1" max="15" step="1"  minlength="1" maxlength="2">
-				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<div class="col-auto">
-					<label for="repeter_time_slot" class="col-form-label">Repeter/Time Slot</label>
-				</div>
-				<div class="col-auto">
-					<select class="form-select" id="repeter_time_slot" data-min="1" data-max="2">
-						<option value="1">1</option>
-						<option value="2">2</option>
-					</select>
+				<hr/>
+				<div class="mb-3">
+					<button class="btn btn-secondary" type="button" onclick="generateSimplexChanel()">Generate Simplex Chanel</button>
 				</div>
 			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<div class="col-auto">
-					<label for="tx_frequency" class="col-form-label">TX Frequency (MHz)</label>
+			<div class="col">
+				<div class="mb-3">
+					<h2>Repeated mode</h2>
 				</div>
-				<div class="col-auto">
-					<input class="form-control" id="tx_frequency" type="text" data-min="136" data-max="174">
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="second_key_id" class="col-form-label">Key ID</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="second_key_id" type="number" min="1" max="255" step="1"  minlength="1" maxlength="3">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="second_enhanzed_key" class="col-form-label">Enhanced privacy key</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="second_enhanzed_key" type="text" minlength="1" maxlength="10">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="second_symmetric_key" class="col-form-label">Symmetric key</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="second_symmetric_key" type="text" step="1" minlength="1" maxlength="64">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="ras_id" class="col-form-label">RAS</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="ras_id" type="text" minlength="1" maxlength="24">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="second_call_id" class="col-form-label">Call ID</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="second_call_id" type="number" min="1" max="16776415" step="1"  minlength="1" maxlength="8">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="second_color_code" class="col-form-label">Color Code</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="second_color_code" type="number" min="1" max="15" step="1"  minlength="1" maxlength="2">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="repeter_time_slot" class="col-form-label">Repeter/Time Slot</label>
+						</div>
+						<div class="col-auto">
+							<select class="form-select" id="repeter_time_slot" data-min="1" data-max="2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="second_tx_frequency" class="col-form-label">TX Frequency (MHz)</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="second_tx_frequency" type="text" data-min="136" data-max="174">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="second_rx_frequency" class="col-form-label">RX Frequency (MHz)</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="second_rx_frequency" type="text" data-min="136" data-max="174">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<button class="btn btn-secondary" type="button" onclick="generateRepeatedChanel()">Generate Repeated Chanel</button>
 				</div>
 			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<div class="row g-2 align-items-center">
-				<div class="col-auto">
-					<label for="rx_frequency" class="col-form-label">RX Frequency (MHz)</label>
-				</div>
-				<div class="col-auto">
-					<input class="form-control" id="rx_frequency" type="text" data-min="136" data-max="174">
-				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="mb-3">
-			<button class="btn btn-secondary" type="button" onclick="generateChanel()">Generate Chanel</button>
 		</div>
 	</div>
 </main>

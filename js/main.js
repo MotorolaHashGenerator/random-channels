@@ -35,54 +35,68 @@ function generateRAS(size) {
 	return getRandHash(size, elements);
 }
 
-function generateChanel() {
-	const key_id_element = document.getElementById('key_id');
-	const key_id_min = parseInt(key_id_element.getAttribute('min'));
-	const key_id_max = parseInt(key_id_element.getAttribute('max'));
-	key_id_element.value = getRandomNumber(key_id_min, key_id_max);
+function setRandomNumber(element_id) {
+	const element = document.getElementById(element_id);
+	const min = parseInt(element.getAttribute('min'));
+	const max = parseInt(element.getAttribute('max'));
+	element.value = getRandomNumber(min, max);
+}
 
-	const enhanzed_key_element = document.getElementById('enhanzed_key');
-	const enhanzed_key_maxlength = parseInt(enhanzed_key_element.getAttribute('maxlength'));
-	enhanzed_key_element.value = generateHexadecimal(enhanzed_key_maxlength)
+function setRadomHexadecimal(element_id) {
+	const element = document.getElementById(element_id);
+	const maxlength = parseInt(element.getAttribute('maxlength'));
+	element.value = generateHexadecimal(maxlength)
+}
 
-	const symmetric_key_element = document.getElementById('symmetric_key');
-	const symmetric_key_maxlength = parseInt(symmetric_key_element.getAttribute('maxlength'));
-	symmetric_key_element.value = generateHexadecimal(symmetric_key_maxlength)
+function setRadomRAS(element_id) {
+	const element = document.getElementById(element_id);
+	const maxlength = parseInt(element.getAttribute('maxlength'));
+	element.value = generateRAS(maxlength)
+}
 
-	const ras_id_element = document.getElementById('ras_id');
-	const ras_id_maxlength = parseInt(ras_id_element.getAttribute('maxlength'));
-	ras_id_element.value = generateRAS(ras_id_maxlength)
-
-	const call_id_element = document.getElementById('call_id');
-	const call_id_min = parseInt(call_id_element.getAttribute('min'));
-	const call_id_max = parseInt(call_id_element.getAttribute('max'));
-	call_id_element.value = getRandomNumber(call_id_min, call_id_max);
-
-	const color_code_element = document.getElementById('color_code');
-	const color_code_min = parseInt(color_code_element.getAttribute('min'));
-	const color_code_max = parseInt(color_code_element.getAttribute('max'));
-	color_code_element.value = getRandomNumber(color_code_min, color_code_max);
-
-	const repeter_time_slot_element = document.getElementById('repeter_time_slot');
-	let repeter_time_slot_values = [];
-	for (const repeter_time_slot_option of repeter_time_slot_element.getElementsByTagName('option')) {
-		repeter_time_slot_values.push(repeter_time_slot_option.value)
+function setRandomOption(element_id) {
+	const element = document.getElementById(element_id);
+	let values = [];
+	for (const option of element.getElementsByTagName('option')) {
+		values.push(option.value)
 	}
-	repeter_time_slot_element.value = getRandElement(repeter_time_slot_values)
+	element.value = getRandElement(values)
+}
 
+function setRandomFrequency(element_id) {
 	const random_number = getRandElement([9, 99, 999])
+	const element = document.getElementById(element_id);
+	const min = parseInt(element.getAttribute('data-min'));
+	const max = parseInt(element.getAttribute('data-max'));
+	element.value = getRandomNumber(min, max);
+	element.value += "."
+	element.value += getRandomNumber(0, random_number)
+}
 
-	const tx_frequency_element = document.getElementById('tx_frequency');
-	const tx_frequency_element_min = parseInt(tx_frequency_element.getAttribute('data-min'));
-	const tx_frequency_element_max = parseInt(tx_frequency_element.getAttribute('data-max'));
-	tx_frequency_element.value = getRandomNumber(tx_frequency_element_min, tx_frequency_element_max);
-	tx_frequency_element.value += "."
-	tx_frequency_element.value += getRandomNumber(0, random_number)
+function dublicateValue(from_element_id, to_element_id) {
+	const from_element = document.getElementById(from_element_id);
+	const to_element = document.getElementById(to_element_id);
+	to_element.value = from_element.value
+}
 
-	const rx_frequency_element = document.getElementById('rx_frequency');
-	const rx_frequency_element_min = parseInt(rx_frequency_element.getAttribute('data-min'));
-	const rx_frequency_element_max = parseInt(rx_frequency_element.getAttribute('data-max'));
-	rx_frequency_element.value = getRandomNumber(rx_frequency_element_min, rx_frequency_element_max);
-	rx_frequency_element.value += "."
-	rx_frequency_element.value += getRandomNumber(0, random_number)
+function generateSimplexChanel() {
+	setRandomNumber('first_key_id')
+	setRadomHexadecimal('first_enhanzed_key')
+	setRadomHexadecimal('first_symmetric_key')
+	setRandomNumber('first_call_id')
+	setRandomNumber('first_color_code')
+	setRandomFrequency('first_rx_frequency')
+	dublicateValue('first_rx_frequency', 'first_tx_frequency')
+}
+
+function generateRepeatedChanel() {
+	setRandomNumber('second_key_id')
+	setRadomHexadecimal('second_enhanzed_key')
+	setRadomHexadecimal('second_symmetric_key')
+	setRadomRAS('ras_id')
+	setRandomNumber('second_call_id')
+	setRandomNumber('second_color_code')
+	setRandomOption('repeter_time_slot')
+	setRandomFrequency('second_rx_frequency')
+	setRandomFrequency('second_tx_frequency')
 }

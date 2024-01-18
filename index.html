@@ -14,7 +14,7 @@
 			<h1>Random Channels Generator</h1>
 		</div>
 		<div class="row">
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<div class="mb-3">
 					<h2>Simplex (direct) mode</h2>
 				</div>
@@ -96,10 +96,10 @@
 				</div>
 				<hr/>
 				<div class="mb-3">
-					<button class="btn btn-secondary" type="button" onclick="generateSimplexChanel()">Generate Simplex Chanel</button>
+					<button class="btn btn-secondary" type="button" onclick="if (confirm('Generate Simplex Chanel')) generateSimplexChanel()">Generate Simplex Chanel</button>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<div class="mb-3">
 					<h2>Repeated mode</h2>
 				</div>
@@ -206,7 +206,7 @@
 				</div>
 				<hr/>
 				<div class="mb-3">
-					<button class="btn btn-secondary" type="button" onclick="generateRepeatedChanel()">Generate Repeated Chanel</button>
+					<button class="btn btn-secondary" type="button" onclick="if (confirm('Generate Repeated Chanel')) generateRepeatedChanel()">Generate Repeated Chanel</button>
 				</div>
 			</div>
 		</div>

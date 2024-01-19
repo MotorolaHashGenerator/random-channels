@@ -99,4 +99,23 @@ function generateRepeatedChanel() {
 	setRandomOption('repeter_time_slot')
 	setRandomFrequency('second_rx_frequency')
 	setRandomFrequency('second_tx_frequency')
+
+	const element_ids = [
+		'second_key_id', 'second_enhanzed_key', 'second_symmetric_key',
+		'ras_id', 'second_call_id', 'second_color_code', 'repeter_time_slot',
+		'second_rx_frequency', 'second_tx_frequency',
+	];
+
+	let data = '';
+	for (const element_id of element_ids) {
+		const element = document.getElementById(element_id)
+		const label = element.getAttribute('data-label');
+		const value = element.value;
+
+		data += label + ":\t\t\t" + value + "\n";
+	}
+
+	const download_element = document.getElementById('download_repeated_chanel')
+	download_element.removeAttribute('hidden')
+	download_element.href = 'data:attachment/text,' + encodeURI(data);
 }

@@ -96,7 +96,14 @@
 				</div>
 				<hr/>
 				<div class="mb-3">
-					<button class="btn btn-secondary" type="button" onclick="if (confirm('Generate Simplex Chanel')) generateSimplexChanel()">Generate Simplex Chanel</button>
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<button class="btn btn-secondary" type="button" onclick="if (confirm('Generate Simplex Chanel')) generateSimplexChanel()">Generate Simplex Chanel</button>
+						</div>
+						<div class="col-auto">
+							<a id="download_simplex_chanel" class="btn btn-success" hidden download="simplex_chanel.txt" target="_blank" href="#">Download Simplex Chanel</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">

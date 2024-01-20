@@ -56,8 +56,9 @@ function setRadomRAS(element_id) {
 
 function setRandomOption(element_id) {
 	const element = document.getElementById(element_id);
+	const options = element.getElementsByTagName('option');
 	let values = [];
-	for (const option of element.getElementsByTagName('option')) {
+	for (const option of options) {
 		values.push(option.value)
 	}
 	element.value = getRandElement(values)
@@ -69,53 +70,72 @@ function setRandomFrequency(element_id) {
 	const min = parseInt(element.getAttribute('data-min'));
 	const max = parseInt(element.getAttribute('data-max'));
 	element.value = getRandomNumber(min, max);
-	element.value += "."
-	element.value += getRandomNumber(0, random_number)
+	element.value += ".";
+	element.value += getRandomNumber(0, random_number);
 }
 
 function dublicateValue(from_element_id, to_element_id) {
 	const from_element = document.getElementById(from_element_id);
 	const to_element = document.getElementById(to_element_id);
-	to_element.value = from_element.value
+	to_element.value = from_element.value;
 }
 
-function generateSimplexChanel() {
-	setRandomNumber('first_key_id')
-	setRadomHexadecimal('first_enhanzed_key')
-	setRadomHexadecimal('first_symmetric_key')
-	setRandomNumber('first_call_id')
-	setRandomNumber('first_color_code')
-	setRandomFrequency('first_rx_frequency')
-	dublicateValue('first_rx_frequency', 'first_tx_frequency')
+function updateAndShowDownloadElement(element_ids, download_element_id) {
+	let data = '';
+
+	for (const element_id of element_ids) {
+		const element = document.getElementById(element_id);
+		const label = element.getAttribute('data-label');
+		const value = element.value;
+
+		data += label + ":\t" + value + "\n";
+	}
+
+	const download_element = document.getElementById(download_element_id);
+	if (download_element.hasAttribute('hidden')) {
+		download_element.removeAttribute('hidden');
+	}
+
+	download_element.href = 'data:attachment/text,' + encodeURIComponent(data);
 }
 
-function generateRepeatedChanel() {
-	setRandomNumber('second_key_id')
-	setRadomHexadecimal('second_enhanzed_key')
-	setRadomHexadecimal('second_symmetric_key')
-	setRadomRAS('ras_id')
-	setRandomNumber('second_call_id')
-	setRandomNumber('second_color_code')
-	setRandomOption('repeter_time_slot')
-	setRandomFrequency('second_rx_frequency')
-	setRandomFrequency('second_tx_frequency')
+function updateSimplexDownloadElement() {
+	const element_ids = [
+		'first_key_id', 'first_enhanzed_key', 'first_symmetric_key',
+		'first_call_id', 'first_color_code', 'first_rx_frequency', 'first_tx_frequency',
+	];
 
+	updateAndShowDownloadElement(element_ids, 'download_simplex_chanel')
+}
+
+function updateRepeatedDownloadElement() {
 	const element_ids = [
 		'second_key_id', 'second_enhanzed_key', 'second_symmetric_key',
 		'ras_id', 'second_call_id', 'second_color_code', 'repeter_time_slot',
 		'second_rx_frequency', 'second_tx_frequency',
 	];
 
-	let data = '';
-	for (const element_id of element_ids) {
-		const element = document.getElementById(element_id)
-		const label = element.getAttribute('data-label');
-		const value = element.value;
+	updateAndShowDownloadElement(element_ids, 'download_repeated_chanel')
+}
 
-		data += label + ":\t\t\t" + value + "\n";
-	}
+function generateSimplexChanel() {
+	setRandomNumber('first_key_id');
+	setRadomHexadecimal('first_enhanzed_key');
+	setRadomHexadecimal('first_symmetric_key');
+	setRandomNumber('first_call_id');
+	setRandomNumber('first_color_code');
+	setRandomFrequency('first_rx_frequency');
+	dublicateValue('first_rx_frequency', 'first_tx_frequency');
+}
 
-	const download_element = document.getElementById('download_repeated_chanel')
-	download_element.removeAttribute('hidden')
-	download_element.href = 'data:attachment/text,' + encodeURI(data);
+function generateRepeatedChanel() {
+	setRandomNumber('second_key_id');
+	setRadomHexadecimal('second_enhanzed_key');
+	setRadomHexadecimal('second_symmetric_key');
+	setRadomRAS('ras_id');
+	setRandomNumber('second_call_id');
+	setRandomNumber('second_color_code');
+	setRandomOption('repeter_time_slot');
+	setRandomFrequency('second_rx_frequency');
+	setRandomFrequency('second_tx_frequency');
 }

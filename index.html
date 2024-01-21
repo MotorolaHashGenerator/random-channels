@@ -21,21 +21,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="first_key_id" class="col-form-label">Key ID</label>
+							<label for="simplex_key_id" class="col-form-label">Key ID</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="first_key_id" type="number" min="1" max="255" step="1" minlength="1" maxlength="3" data-label="Key ID">
-						</div>
-					</div>
-				</div>
-				<hr/>
-				<div class="mb-3">
-					<div class="row g-2 align-items-center">
-						<div class="col-auto">
-							<label for="first_enhanzed_key" class="col-form-label">Enhanced privacy key</label>
-						</div>
-						<div class="col-auto">
-							<input class="form-control" id="first_enhanzed_key" type="text" minlength="1" maxlength="10" data-label="Enhanced privacy key">
+							<input class="form-control" id="simplex_key_id" type="number" min="1" max="255" step="1" minlength="1" maxlength="3" data-label="Key ID">
 						</div>
 					</div>
 				</div>
@@ -43,21 +32,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="first_symmetric_key" class="col-form-label">Symmetric key</label>
+							<label for="simplex_enhanzed_key" class="col-form-label">Enhanced privacy key</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="first_symmetric_key" type="text" step="1" minlength="1" maxlength="64" data-label="Symmetric key">
-						</div>
-					</div>
-				</div>
-				<hr/>
-				<div class="mb-3">
-					<div class="row g-2 align-items-center">
-						<div class="col-auto">
-							<label for="first_call_id" class="col-form-label">Call ID</label>
-						</div>
-						<div class="col-auto">
-							<input class="form-control" id="first_call_id" type="number" min="1" max="16776415" step="1"  minlength="1" maxlength="8" data-label="Call ID">
+							<input class="form-control" id="simplex_enhanzed_key" type="text" minlength="1" maxlength="10" data-label="Enhanced privacy key">
 						</div>
 					</div>
 				</div>
@@ -65,21 +43,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="first_color_code" class="col-form-label">Color Code</label>
+							<label for="simplex_symmetric_key" class="col-form-label">Symmetric key</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="first_color_code" type="number" min="1" max="15" step="1"  minlength="1" maxlength="2" data-label="Color Code">
-						</div>
-					</div>
-				</div>
-				<hr/>
-				<div class="mb-3">
-					<div class="row g-2 align-items-center">
-						<div class="col-auto">
-							<label for="first_tx_frequency" class="col-form-label">TX Frequency (MHz)</label>
-						</div>
-						<div class="col-auto">
-							<input class="form-control" id="first_tx_frequency" type="text" data-min="136" data-max="174" data-label="TX Frequency (MHz)">
+							<input class="form-control" id="simplex_symmetric_key" type="text" step="1" minlength="1" maxlength="64" data-label="Symmetric key">
 						</div>
 					</div>
 				</div>
@@ -87,10 +54,43 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="first_rx_frequency" class="col-form-label">RX Frequency (MHz)</label>
+							<label for="simplex_call_id" class="col-form-label">Call ID</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="first_rx_frequency" type="text" data-min="136" data-max="174" data-label="RX Frequency (MHz)">
+							<input class="form-control" id="simplex_call_id" type="number" min="1" max="16776415" step="1"  minlength="1" maxlength="8" data-label="Call ID">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="simplex_color_code" class="col-form-label">Color Code</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="simplex_color_code" type="number" min="1" max="15" step="1"  minlength="1" maxlength="2" data-label="Color Code">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="simplex_tx_frequency" class="col-form-label">TX Frequency (MHz)</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="simplex_tx_frequency" type="text" data-min="136" data-max="174" data-label="TX Frequency (MHz)">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="simplex_rx_frequency" class="col-form-label">RX Frequency (MHz)</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="simplex_rx_frequency" type="text" data-min="136" data-max="174" data-label="RX Frequency (MHz)">
 						</div>
 					</div>
 				</div>
@@ -113,21 +113,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="second_key_id" class="col-form-label">Key ID</label>
+							<label for="repeated_key_id" class="col-form-label">Key ID</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="second_key_id" type="number" min="1" max="255" step="1"  minlength="1" maxlength="3" data-label="Key ID">
-						</div>
-					</div>
-				</div>
-				<hr/>
-				<div class="mb-3">
-					<div class="row g-2 align-items-center">
-						<div class="col-auto">
-							<label for="second_enhanzed_key" class="col-form-label">Enhanced privacy key</label>
-						</div>
-						<div class="col-auto">
-							<input class="form-control" id="second_enhanzed_key" type="text" minlength="1" maxlength="10" data-label="Enhanced privacy key">
+							<input class="form-control" id="repeated_key_id" type="number" min="1" max="255" step="1"  minlength="1" maxlength="3" data-label="Key ID">
 						</div>
 					</div>
 				</div>
@@ -135,10 +124,21 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="second_symmetric_key" class="col-form-label">Symmetric key</label>
+							<label for="repeated_enhanzed_key" class="col-form-label">Enhanced privacy key</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="second_symmetric_key" type="text" step="1" minlength="1" maxlength="64" data-label="Symmetric key">
+							<input class="form-control" id="repeated_enhanzed_key" type="text" minlength="1" maxlength="10" data-label="Enhanced privacy key">
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mb-3">
+					<div class="row g-2 align-items-center">
+						<div class="col-auto">
+							<label for="repeated_symmetric_key" class="col-form-label">Symmetric key</label>
+						</div>
+						<div class="col-auto">
+							<input class="form-control" id="repeated_symmetric_key" type="text" step="1" minlength="1" maxlength="64" data-label="Symmetric key">
 						</div>
 					</div>
 				</div>
@@ -157,10 +157,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="second_call_id" class="col-form-label">Call ID</label>
+							<label for="repeated_call_id" class="col-form-label">Call ID</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="second_call_id" type="number" min="1" max="16776415" step="1"  minlength="1" maxlength="8" data-label="Call ID">
+							<input class="form-control" id="repeated_call_id" type="number" min="1" max="16776415" step="1"  minlength="1" maxlength="8" data-label="Call ID">
 						</div>
 					</div>
 				</div>
@@ -168,10 +168,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="second_color_code" class="col-form-label">Color Code</label>
+							<label for="repeated_color_code" class="col-form-label">Color Code</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="second_color_code" type="number" min="1" max="15" step="1"  minlength="1" maxlength="2" data-label="Color Code">
+							<input class="form-control" id="repeated_color_code" type="number" min="1" max="15" step="1"  minlength="1" maxlength="2" data-label="Color Code">
 						</div>
 					</div>
 				</div>
@@ -193,10 +193,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="second_tx_frequency" class="col-form-label">TX Frequency (MHz)</label>
+							<label for="repeated_tx_frequency" class="col-form-label">TX Frequency (MHz)</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="second_tx_frequency" type="text" data-min="136" data-max="174" data-label="TX Frequency (MHz)">
+							<input class="form-control" id="repeated_tx_frequency" type="text" data-min="136" data-max="174" data-label="TX Frequency (MHz)">
 						</div>
 					</div>
 				</div>
@@ -204,10 +204,10 @@
 				<div class="mb-3">
 					<div class="row g-2 align-items-center">
 						<div class="col-auto">
-							<label for="second_rx_frequency" class="col-form-label">RX Frequency (MHz)</label>
+							<label for="repeated_rx_frequency" class="col-form-label">RX Frequency (MHz)</label>
 						</div>
 						<div class="col-auto">
-							<input class="form-control" id="second_rx_frequency" type="text" data-min="136" data-max="174" data-label="RX Frequency (MHz)">
+							<input class="form-control" id="repeated_rx_frequency" type="text" data-min="136" data-max="174" data-label="RX Frequency (MHz)">
 						</div>
 					</div>
 				</div>

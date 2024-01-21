@@ -101,8 +101,8 @@ function updateAndShowDownloadElement(element_ids, download_element_id) {
 
 function updateSimplexDownloadElement() {
 	const element_ids = [
-		'first_key_id', 'first_enhanzed_key', 'first_symmetric_key',
-		'first_call_id', 'first_color_code', 'first_rx_frequency', 'first_tx_frequency',
+		'simplex_key_id', 'simplex_enhanzed_key', 'simplex_symmetric_key',
+		'simplex_call_id', 'simplex_color_code', 'simplex_rx_frequency', 'simplex_tx_frequency',
 	];
 
 	updateAndShowDownloadElement(element_ids, 'download_simplex_chanel')
@@ -110,32 +110,36 @@ function updateSimplexDownloadElement() {
 
 function updateRepeatedDownloadElement() {
 	const element_ids = [
-		'second_key_id', 'second_enhanzed_key', 'second_symmetric_key',
-		'ras_id', 'second_call_id', 'second_color_code', 'repeter_time_slot',
-		'second_rx_frequency', 'second_tx_frequency',
+		'repeated_key_id', 'repeated_enhanzed_key', 'repeated_symmetric_key',
+		'ras_id', 'repeated_call_id', 'repeated_color_code', 'repeter_time_slot',
+		'repeated_rx_frequency', 'repeated_tx_frequency',
 	];
 
 	updateAndShowDownloadElement(element_ids, 'download_repeated_chanel')
 }
 
 function generateSimplexChanel() {
-	setRandomNumber('first_key_id');
-	setRadomHexadecimal('first_enhanzed_key');
-	setRadomHexadecimal('first_symmetric_key');
-	setRandomNumber('first_call_id');
-	setRandomNumber('first_color_code');
-	setRandomFrequency('first_rx_frequency');
-	dublicateValue('first_rx_frequency', 'first_tx_frequency');
+	setRandomNumber('simplex_key_id');
+	setRadomHexadecimal('simplex_enhanzed_key');
+	setRadomHexadecimal('simplex_symmetric_key');
+	setRandomNumber('simplex_call_id');
+	setRandomNumber('simplex_color_code');
+	setRandomFrequency('simplex_rx_frequency');
+	dublicateValue('simplex_rx_frequency', 'simplex_tx_frequency');
+
+	updateSimplexDownloadElement()
 }
 
 function generateRepeatedChanel() {
-	setRandomNumber('second_key_id');
-	setRadomHexadecimal('second_enhanzed_key');
-	setRadomHexadecimal('second_symmetric_key');
+	setRandomNumber('repeated_key_id');
+	setRadomHexadecimal('repeated_enhanzed_key');
+	setRadomHexadecimal('repeated_symmetric_key');
 	setRadomRAS('ras_id');
-	setRandomNumber('second_call_id');
-	setRandomNumber('second_color_code');
+	setRandomNumber('repeated_call_id');
+	setRandomNumber('repeated_color_code');
 	setRandomOption('repeter_time_slot');
-	setRandomFrequency('second_rx_frequency');
-	setRandomFrequency('second_tx_frequency');
+	setRandomFrequency('repeated_rx_frequency');
+	setRandomFrequency('repeated_tx_frequency');
+
+	updateRepeatedDownloadElement()
 }
